@@ -110,14 +110,30 @@ export class CalculatorComponent implements OnInit {
 
     this.calculatorService.calculate(requestData).subscribe(
       (response) => {
+        const operatorSymbol = this.getOperatorSymbol(operation);
         this.displayValue = response.results.toString();
-        this.calculationHistory.push(`${operand_A} ${Operation[operation]} ${operand_B} = ${response.results}`);
+        this.calculationHistory.unshift(`${operand_A} ${operatorSymbol} ${operand_B} = ${response.results}`);
         this.calculate();
       },
       (error) => {
         console.error('Error occurred while performing calculation:', error);
       }
     );
+  }
+
+  getOperatorSymbol(operation: Operation): string{
+    switch (operation) {
+      case Operation.Add:
+        return '+';
+      case Operation.Subtract:
+        return '-';
+      case Operation.Multiply:
+        return '*';
+      case Operation.Divide:
+        return '/';
+      default:
+        return '';
+    }
   }
 
   retrieveCalculationHistory() {
@@ -131,5 +147,8 @@ export class CalculatorComponent implements OnInit {
     );
   }
 
+  clearCalculationHistory(){
+    this.calculationHistory = [];
+  }
 
 }

@@ -84,3 +84,39 @@
 .right-operator-container .btn {
   margin-bottom: 10px; /* Add some bottom margin for spacing */
 }
+
+.history-title {
+  font-size: 20px; /* Adjust font size as needed */
+  font-weight: bold; /* Make the title bold */
+  padding: .1rem .5rem; /* Add padding for spacing */
+  margin-top: 20px; /* Add margin at the top for separation */
+  border-bottom: 1px solid #ccc; /* Add a bottom border for visual separation */
+  text-align: center;
+}
+
+
+.history-container {
+  overflow-y: auto; 
+  max-height: 150px; 
+  border: 1px solid #ccc; 
+  padding: 10px; /* Add padding to the history container */
+  position: relative; /* Enable positioning */
+}
+
+
+
+.history-container ul {
+  list-style-type: none; /* Remove bullet points from the list */
+  padding: 10px 0 0; /* Add padding to the top of the list to create space below the title */
+  margin: 0; /* Remove default margin */
+}
+
+.history-container ul li {
+  padding: 5px 0; /* Add vertical padding to each history item for spacing */
+  border-bottom: 1px solid #ccc; /* Add bottom border between history items */
+}
+
+.history-container ul li:last-child {
+  border-bottom: none; /* Remove bottom border for the last history item */
+}
+
