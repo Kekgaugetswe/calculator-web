@@ -1,0 +1,39 @@
+<div class="container">
+  <div class="top-container">
+
+    <form action="" [formGroup]="inputStr">
+      <input type="text" formControlName="text" class="display">
+    </form>
+  </div>
+  <div class="bottom-container">
+    <div class="left-container">
+      <div class="symbol-container">
+        <button class="btn symbol" (click)="clearDisplay()">AC</button>
+        <button class="btn symbol">+/-</button>
+        <button class="btn symbol">%</button>
+      </div>
+      <div class="number-container">
+        <button class="btn number" (click)="buttonClick($event.target)">7</button>
+        <button class="btn number" (click)="buttonClick($event.target)">8</button>
+        <button class="btn number" (click)="buttonClick($event.target)">9</button>
+        <button class="btn number" (click)="buttonClick($event.target)">4</button>
+        <button class="btn number"(click)="buttonClick($event.target)">5</button>
+        <button class="btn number" (click)="buttonClick($event.target)">6</button>
+        <button class="btn number" (click)="buttonClick($event.target)">1</button>
+        <button class="btn number" (click)="buttonClick($event.target)">2</button>
+        <button class="btn number" (click)="buttonClick($event.target)">3</button>
+        <button class="btn  number zero" (click)="buttonClick($event.target)">0</button>
+        <button class="btn number">.</button>
+      </div>
+    </div>
+    <div class="right-operator-container">
+      <button class="btn right-operator" (click)="buttonClick($event.target)">/</button>
+      <button class="btn right-operator" (click)="buttonClick($event.target)">*</button>
+      <button class="btn right-operator" (click)="buttonClick($event.target)">-</button>
+      <button class="btn right-operator" (click)="buttonClick($event.target)">+</button>
+      <button class="btn right-operator" (click)="performCalculation(0)" >=</button>
+
+    </div>
+
+  </div> 
+</div>
